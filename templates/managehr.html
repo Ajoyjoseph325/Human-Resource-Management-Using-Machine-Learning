@@ -1,0 +1,195 @@
+{%include 'admin_header.html' %}
+    {% if data['up'] %}
+
+    <center>
+    <form method="POST" class="form">
+        <table>
+
+
+            <tr>
+                <th><label>name</label></th>
+                <th><input type="text" name="name" value="{{data['up'][0]['name']}}"></th>
+                
+            </tr>
+            <tr>
+                <th><label>qualification</label></th>
+                <th><input type="text" name="quali" value="{{data['up'][0]['qualification']}}"><br></th>
+
+            </tr>
+            <tr>
+                <th><label>phone</label></th>
+                <th><input type="text" name="phone" value="{{data['up'][0]['phone']}}"></th>
+
+            </tr>
+          <!--   <tr>
+                <th>
+                    designation
+
+
+
+
+
+
+                    
+                </th>
+                <td><select name="desig" id="">
+                    {% for i in data['view'] %}
+                    <option value="{{i['designation_id']}}">{{i['designation_name']}}</option>
+                    {% endfor %}
+                </select></td>
+            </tr> -->
+        <!--     <tr>
+                <th><label>Dob</label></th>
+                <th><input type="text" name="dob" value="{{data['up'][0]['dob']}}"></th>
+            </tr>
+            <tr>
+                <th><label>phonenumber</label></th>
+                <th> <input type="text" name="pnum" value="{{data['up'][0]['phone']}}"></th>
+            </tr>
+           
+            <tr> -->
+                <th>email</th>
+                <th><input type="text" name="email" value="{{data['up'][0]['email']}}"></th>
+            </tr>
+        
+            <tr>
+                <th><input class="btn btn-info" type="submit" name="update" value="update"></th>
+            </tr>
+           
+        </table>
+
+        
+    </form>
+</center>
+{%else%}
+
+    <form method="post" aligh="center">
+        <table>
+            <tr>
+                <th><th>
+                <th><h1>Manage Hr<h1><th>
+                <th><th>
+            <tr>
+            <tr>
+                <th><labe>name</labe><th>
+                <th><input type="text" name="hrnm" value=""><th>
+
+            <tr>
+            <tr>
+                <th><labe>qualification</labe><th>
+                <th><input type="text" name="quali" value=""><th>
+
+            <tr>
+            <tr>
+                <th><labe>phone</labe><th>
+                <th><input type="text" name="phone" value=""><th>
+
+            <tr>
+             <tr>
+                <th><labe>email</labe><th>
+                <th><input type="text" name="em" value=""><th>
+
+            <tr>
+                 <tr>
+                <th><labe>username</labe><th>
+                <th><input type="text" name="uname" value=""><th>
+
+            <tr>
+            <tr>
+                <th><labe>password</labe><th>
+                <th><input type="text" name="passw" value=""><th>
+
+            <tr>
+            <tr>
+                
+                
+                <th><input type="submit" class="btn btn-info" name="submit" value="submit"><th>
+                
+
+            <tr>
+
+
+
+        </table>
+        
+        <!-- <h1>managehr</h1>
+        <labe>name</labe><input type="text" name="hrnm" value=""><br>
+        <labe>qualification</labe><input type="text" name="quali" value=""><br>
+        <labe>phone</labe><input type="text" name="phone" value=""><br>
+        <labe>email</labe><input type="text" name="em" value=""><br>
+        <labe>username</labe><input type="text" name="uname" value=""><br>
+        <labe>password</labe><input type="text" name="passw" value=""><btr>
+        <input type="submit" name="submit" value="submit"> -->
+        
+    </form>
+
+
+    {% endif %}
+<!--     <table border="2">
+       
+        <tr>
+            <th>name</th>
+            <th>qualification</th>
+            <th>phone</th>
+            <th>email</th>
+            <th>username</th>
+            <th>password</th>
+            
+            
+
+        </tr>
+        {% for i in data['hr'] %}
+        <tr>
+            <th>{{i['name']}}</th>
+           
+            <th>{{i['qualification']}}</th>
+            <th>{{i['phone']}}</th>
+            <th>{{i['email']}}</th>
+            <th>{{i['username']}}</th>
+            <th>{{i['password']}}</th>
+            <th><a href="?action=update&id={{i['hr_id']}}">update</a></th>
+            <th><a href="?action=delete&id={{i['hr_id']}}">delete</a></th>
+            
+        </tr>
+        
+           
+      
+
+        {% endfor %}
+    </table> -->
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">qualification</th>
+      <th scope="col">phone</th>
+      <th scope="col">email</th>
+      <th scope="col">update</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  {% for i in data['hr'] %}
+  <tbody>
+    <tr>
+      <th scope="row">{{loop.index}}</th>
+      <td>{{i['name']}}</td>
+      <td>{{i['qualification']}}</td>
+      <td>{{i['phone']}}</td>
+      <td>{{i['email']}}</td>
+      <td><a href="?action=update&id={{i['hr_id']}}">update</a></td>
+      <td><a href="?action=delete&id={{i['hr_id']}}">delete</a></td>
+    </tr>
+ 
+
+  </tbody>
+  {% endfor %}
+</table>
+
+
+   
+{% include 'admin_footer.html' %}
+
+    <!-- Registration 7 - Bootstrap Brain Component -->

@@ -1,0 +1,53 @@
+<!-- <html> -->
+{% include 'admin_header.html' %}
+<!--     <h1>viewcomplaints</h1>
+    <table border="2">
+        <tr>
+            
+            <th>complaintDescription</th>
+            <th>Reply</th>
+            <th>Date</th>
+            <th>sendereply</th>
+        </tr>
+        {% for i in data['view'] %}
+        <tr>
+            <th>{{i['complaint_des']}}</th>
+            <th>{{i['reply']}}</th>
+            <th>{{i['date']}}</th>
+            <th><a href="/adminsendreply?id={{i['complaints_id']}}">reply</a></th>
+        </tr>
+        {% endfor %}
+    </table> -->
+    <div>
+
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">complaintDescription</th>
+      <th scope="col">Reply</th>
+      <th scope="col">Date</th>
+      <th scope="col">sendereply</th>
+      
+    </tr>
+  </thead>
+  {% for i in data['view'] %}
+  <tbody>
+    <tr>
+      <th scope="row">{{loop.index}}</th>
+      <td>{{i['complaint_des']}}</td>
+      <td>{{i['reply']}}</td>
+      <td>{{i['date']}}</td>
+      
+      <td><a href="/adminsendreply?id={{i['complaints_id']}}">reply</a></td>
+     
+    </tr>
+ 
+
+  </tbody>
+  {% endfor %}
+</table>
+<div>
+{% include 'admin_footer.html' %}
+
+<!-- </html> -->

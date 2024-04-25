@@ -1,0 +1,35 @@
+{% include 'hr_header.html' %}
+<body>
+
+    <h1><center>view Reply<center></h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">complaintDescription</th>
+      <th scope="col">Reply</th>
+      <th scope="col">Date</th>
+      
+      
+    </tr>
+  </thead>
+  {% for i in data['view'] %}
+  <tbody>
+    <tr>
+      <th scope="row">{{loop.index}}</th>
+      <td>{{i['complaint_des']}}</td>
+      <td>{{i['reply']}}</td>
+      <td>{{i['date']}}</td>
+      
+      
+     
+    </tr>
+ 
+
+  </tbody>
+  {% endfor %}
+</table>
+
+    
+</body>
+{% include 'hr_footer.html' %}

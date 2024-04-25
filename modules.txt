@@ -1,0 +1,98 @@
+HR - Employee Will Leave or Not
+
+Admin (Company)
+•	Login
+•	manange HR
+•	Manage designation
+•	Manage staff 
+•	Send notification
+•	View attendance
+•	View complaints
+o	Send reply
+•	view predicted output
+
+HR
+. login
+. view notification
+. view attendance
+. send complaints
+. view reply
+. predcit employee will leave or not
+. chat with Staff
+
+
+Staff
+•	Login
+o	Mark attendance
+•	View profile
+o	Edit profile
+•	Change password
+•	View notifications
+•	Send complaints
+o	View reply
+•	chat with HR
+
+
+
+
+
+
+Tables
+
+
+Login
+•	Login_id
+•	Username
+•	Password
+•	Usertype
+
+hr_team
+•	hr_id
+•	Login_id
+•	Name
+•	Qualification
+•	Phone
+•	Email
+
+
+Staff
+•	Staff_id
+•	Login_id
+•	Designation_id
+•	First_name
+•	Last_name
+•	Gender
+•	Dob
+•	Phone
+•	Email
+
+Designation
+•	Designation_id
+•	Designation_name
+
+Complaints
+•	Complaints_id
+•	Staff_id
+•	Complaint_des
+•	Reply
+•	Date
+
+Notification
+•	Notification_id
+•	notification_des
+•	date
+
+Attendance
+•	Attendance_id
+•	Staff_id
+•	Date
+•	status
+chat
+chat_id
+sender_id
+receiver_id
+message
+date
+
+
+

@@ -1,0 +1,24 @@
+{% include 'hr_header.html' %}
+    <center><h1>sendcomplaints</h1></center>
+    <form method="post">
+        <!-- <label>complaint</label><input type="text" name="complaint" value=""> -->
+        <div class="form-group">
+           
+            <textarea style="display: block;
+            margin-left: auto;
+            margin-right: auto;" name="complaint" rows="15" cols="40" value=""></textarea>
+          </div>
+        
+<!-- 
+       <label>staff</label> <td><select name="staff" id="">
+            {% for i in data['view'] %}
+            <option value="{{i['staff_id']}}">{{i['staff_id']}}</option>
+            {% endfor %}
+        </select></td> -->
+       
+        <center><input type="submit" class="btn btn-primary" name="submit" value="submit"></center>
+
+
+    </form>
+    
+{% include 'hr_footer.html' %}

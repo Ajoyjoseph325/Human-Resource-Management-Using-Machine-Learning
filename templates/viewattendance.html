@@ -1,0 +1,33 @@
+{% include 'hr_header.html' %}
+    <h1>attendenceview</h1>
+    
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
+     
+      <th scope="col">Status</th>
+      
+      
+    </tr>
+  </thead>
+  {% for i in data['view'] %}
+  <tbody>
+    <tr>
+      <th scope="row">{{loop.index}}</th>
+      <td>{{i['date']}}</td>
+      
+      <td>{{i['status']}}</td>
+      
+      
+     
+    </tr>
+ 
+
+  </tbody>
+  {% endfor %}
+</table>
+
+
+{% include 'hr_footer.html' %}

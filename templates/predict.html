@@ -1,0 +1,103 @@
+{% include 'hr_header.html'%}
+
+{% if prediction_result %}
+
+
+<center>
+    <h1>{{prediction_result}}</h1>
+</center>
+
+{% else %}
+<center>
+    <h1>Predict About Staff</h1>
+
+    <form method="post">
+        <table>
+            <tr>
+                <th>Select Staff</th>
+                <td><select name="stf" id="" required class="form-control">
+                    <option value="">Select</option>
+                    {% for i in data['view'] %}
+                    <option value="{{i['staff_id']}}">{{i['first_name']}} {{i['last_name']}}</option>
+                    {% endfor %}
+                </select></td>
+            </tr>
+            <tr>
+                <th>Satisfaction Level</th>
+                <td><input type="number" name="sl" step="any" class="form-control" required></td>
+
+            </tr>
+            <tr>
+                <th>Last Evaluation</th>
+                <td><input type="number" name="le" class="form-control" required></td>
+
+            </tr>
+            <tr>
+                <th>Number Project</th>
+                <td><input type="number" name="np" class="form-control" required></td>
+
+            </tr>
+            <tr>
+                <th>Average Monthly Hours</th>
+                <td><input type="number" name="amh" class="form-control" required></td>
+
+            </tr>
+            <tr>
+                <th>Time Spend Company</th>
+                <td><input type="number" name="tsc" class="form-control" required></td>
+
+            </tr>
+            <tr>
+                <th>Work Accident</th>
+                <td><input type="number" name="wa" class="form-control" required></td>
+
+            </tr>
+            <tr>
+                <th>Promotion Last 5 years</th>
+                <td><input type="number" name="promo" class="form-control" required></td>
+            </tr>
+            <tr>
+                <th>Department</th>
+                <td><select name="dept" id="" required class="form-control" required>
+                    <option value="">Select</option>
+                    <option value="sales">Sales</option>
+                    <option value="accounting">Accounting</option>
+                    <option value="hr">HR</option>
+                    <option value="technical">Technical</option>
+                    <option value="support">Support</option>
+                    <option value="management">Management</option>
+                    <option value="IT">IT</option>
+                    <option value="product_mng">Product Management</option>
+                    <option value="marketing">Maketing</option>
+                    <option value="RandD">RandD</option>
+
+
+
+
+
+
+                    
+                </select></td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td><select name="sal" required class="form-control" required>
+                    <option value="">Select</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+
+                </select></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" name="submit" class="btn btn-success"></td>
+            </tr>
+        </table>
+    </form>
+</center>
+
+{% endif %}
+
+
+
+{% include 'footer.html'%}

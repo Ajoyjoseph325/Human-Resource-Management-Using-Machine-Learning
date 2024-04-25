@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% if data['up'] %}
+    <form method="POST">
+        <table>
+
+
+            <tr>
+                <th><label>name</label></th>
+                <th><input type="text" name="fname" value="{{data['up'][0]['name']}}"></th>
+                
+            </tr>
+            <tr>
+                <th><label>qualification</label></th>
+                <th><input type="text" name="quali" value="{{data['up'][0]['qualification']}}"><br></th>
+
+            </tr>
+            <tr>
+                <th><label>phone</label></th>
+                <th><input type="text" name="phone" value="{{data['up'][0]['phone']}}"></th>
+
+            </tr>
+          
+          
+           
+            <tr>
+                <th>email</th>
+                <th><input type="text" name="ema" value="{{data['up'][0]['email']}}"></th>
+            </tr>
+        
+            <tr>
+                <th><input type="submit" name="update" value="update"></th>
+            </tr>
+           
+        </table>
+
+        
+    </form>
+{% else %}
+    <table border="2">
+     
+        <tr>
+            <th>name</th>
+            <th>qualification</th>
+            <th>phone</th>
+            <th>email</th>
+            <th>update</th>
+            <th>delete</th>
+          
+        </tr>
+        {% for i in data['view'] %}
+            <tr>
+                <th>{{i['name']}}</th>
+                <th>{{i['qualification']}}</th>
+                <th>{{i['phone']}}</th>
+                <th>{{i['email']}}</th>
+                <th><a href="?action=update&id={{i['hr_id']}}">update</a></th>
+                <th><a href="?action=delete&id={{i['hr_id']}}">delete</a></th>
+                
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+    
+</body>
+</html>
